@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 /**
+ * Classe fornecida no enunciado.
  * @author gabriel_stabel<gabriel_stabel@sicredi.com.br>
  */
 @Component
@@ -35,11 +36,11 @@ public class ReceitaService {
             return false;
         }
 
-        // Simula tempo de resposta do serviço (entre 1 e 5 segundos)
+        // Simula tempo de resposta do serviÃ§o (entre 1 e 5 segundos)
         long wait = Math.round(Math.random() * 4000) + 1000;
         Thread.sleep(wait);
 
-        // Simula cenario de erro no serviço (0,1% de erro)
+        // Simula cenario de erro no serviÃ§o (0,1% de erro)
         long randomError = Math.round(Math.random() * 1000);
         if (randomError == 500) {
             throw new RuntimeException("Error");

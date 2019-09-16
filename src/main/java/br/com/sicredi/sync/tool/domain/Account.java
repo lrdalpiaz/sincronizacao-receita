@@ -1,14 +1,14 @@
 package br.com.sicredi.sync.tool.domain;
 
+import java.util.Objects;
+
 import com.opencsv.bean.CsvBindByPosition;
 import com.opencsv.bean.CsvNumber;
 
-import br.com.sicredi.sync.tool.parser.Entry;
-
 /**
- * Linha do CSV de contas.
+ * Objeto de domÃ­nio que representa uma conta, lida do arquivo CSV.
  */
-public class Account implements Entry {
+public class Account {
 
     @CsvBindByPosition(position = 0)
     private String agencia;
@@ -19,6 +19,8 @@ public class Account implements Entry {
     private double saldo;
     @CsvBindByPosition(position = 3)
     private String status;
+    @CsvBindByPosition(position = 4)
+    private String updateStatus;
 
     public String getAgencia() {
         return agencia;
@@ -29,6 +31,15 @@ public class Account implements Entry {
     }
 
     public String getConta() {
+        return conta;
+    }
+
+    /*
+     * Optei por incluir essa regra aqui por simplicidade.
+     * Num aplicaÃ§Ã£o real, talvez o melhor fosse separa os objetos que representam
+     * uma linha do CSV e o objeto de domÃ­nio da ReceitaService.
+     */
+    public String getNumeroConta() {
         return conta.replace("-", "");
     }
 
@@ -50,5 +61,33 @@ public class Account implements Entry {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getUpdateStatus() {
+        return updateStatus;
+    }
+
+    public void setUpdateStatus(String updateStatus) {
+        this.updateStatus = updateStatus;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Account) {
+            Account other = (Account) obj;
+            return Objects.equals(this.agencia,other.getAgencia())
+                    && Objects.equals(this.conta, other.getConta());
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.agencia, this.conta);
+    }
+
+    @Override
+    public String toString() {
+        return "Agencia: " + this.agencia + " Conta: " + this.conta;
     }
 }
