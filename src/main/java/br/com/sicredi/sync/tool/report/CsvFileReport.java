@@ -18,7 +18,6 @@ public class CsvFileReport implements IReport<Account> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CsvFileReport.class);
 
-
     private AtomicInteger totalDispatched = new AtomicInteger();
     private AtomicInteger totalProcessed = new AtomicInteger();
 

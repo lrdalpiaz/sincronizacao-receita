@@ -22,7 +22,7 @@ import br.com.sicredi.sync.tool.report.IReport;
 @Configuration
 public class SyncAccountBalancerConfiguration {
 
-    @Value("${account.sync.maxConcurrent:20}")
+    @Value("${account.update.maxConcurrent:20}")
     private int poolSize;
     @Value("${dry:false}")
     private boolean dryRun;
