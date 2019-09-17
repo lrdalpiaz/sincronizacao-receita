@@ -1,4 +1,4 @@
-package br.com.sicredi.sync.tool.domain.parser;
+package br.com.sicredi.sync.tool.parser;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -14,7 +14,6 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import br.com.sicredi.sync.tool.domain.Account;
-import br.com.sicredi.sync.tool.parser.IParser;
 
 /**
  * Parser do arquivo CSV das contas.

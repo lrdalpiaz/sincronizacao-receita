@@ -1,8 +1,9 @@
-package br.com.sicredi.sync.tool.domain;
+package br.com.sicredi.sync.tool.balancer.executor;
 
 import br.com.sicredi.sync.tool.balancer.api.ITaskExecutor;
 import br.com.sicredi.sync.tool.balancer.api.ProcessRequest;
 import br.com.sicredi.sync.tool.client.IReceitaServiceClient;
+import br.com.sicredi.sync.tool.domain.Account;
 import br.com.sicredi.sync.tool.report.IReport;
 
 public class AccountUpdateExecutor implements ITaskExecutor<Account>{

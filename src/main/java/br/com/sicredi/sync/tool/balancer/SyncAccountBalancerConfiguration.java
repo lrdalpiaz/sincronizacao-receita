@@ -9,10 +9,10 @@ import br.com.sicredi.sync.tool.balancer.api.BalancerManager;
 import br.com.sicredi.sync.tool.balancer.api.DefaultDataStructuresProvider;
 import br.com.sicredi.sync.tool.balancer.api.ProcessDispatcher;
 import br.com.sicredi.sync.tool.balancer.api.ProcessExecutor;
+import br.com.sicredi.sync.tool.balancer.executor.AccountUpdateExecutor;
 import br.com.sicredi.sync.tool.client.FakeReceitaClient;
 import br.com.sicredi.sync.tool.client.ReceitaServiceClient;
 import br.com.sicredi.sync.tool.domain.Account;
-import br.com.sicredi.sync.tool.domain.AccountUpdateExecutor;
 import br.com.sicredi.sync.tool.report.IReport;
 
 /**

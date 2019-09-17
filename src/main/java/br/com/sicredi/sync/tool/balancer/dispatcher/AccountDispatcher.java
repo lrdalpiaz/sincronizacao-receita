@@ -1,4 +1,4 @@
-package br.com.sicredi.sync.tool.domain;
+package br.com.sicredi.sync.tool.balancer.dispatcher;
 
 import java.time.Instant;
 import java.util.Date;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.sicredi.sync.tool.balancer.api.ProcessDispatcher;
 import br.com.sicredi.sync.tool.balancer.api.ProcessRequest;
+import br.com.sicredi.sync.tool.domain.Account;
 import br.com.sicredi.sync.tool.report.IReport;
 
 /**

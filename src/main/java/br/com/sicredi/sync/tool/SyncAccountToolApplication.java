@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
+import br.com.sicredi.sync.tool.balancer.dispatcher.AccountDispatcher;
 import br.com.sicredi.sync.tool.domain.Account;
-import br.com.sicredi.sync.tool.domain.AccountDispatcher;
 import br.com.sicredi.sync.tool.parser.IParser;
 import br.com.sicredi.sync.tool.report.IReport;
 
