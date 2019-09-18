@@ -27,3 +27,10 @@ Fiz dessa forma para simular uma fila de execução que poderia ser facilmente e
 Também deixei a possibilidade de definição de retries, para os casos onde o serviço da Receita responde com erro.
 
 De forma simplificada, tentei simular atacar alguns problemas da aplicação real, como a possibilidade de escalar o serviço de forma mais fácil e prever erros no processo de update da conta.
+
+# Evolução
+Como evolução, eu diria que poderia avançar nos seguintes pontos, dependendo do requisito:
+* Além do retry no momento do envio, o programa poderia se realimentar do próprio arquivo de saída para enviar novamente a entradas que ainda terminarem com falhas, no caso do requisito exigir que 100 das entradas sejam enviadas com sucesso, sem que o usuário precise disparar o comando novamente.
+* Para fins de exercícios, assumi que o arquivo de entrada já estaria em um formato adequado. Não fiz validação para isso, porém, dependendo do cenário, isso poderia ser interessante.
+* O programa poderia ser um serviço que fica disponível com uma página de upload do arquivo, com o processo de update rodando em background. Poderia colocar uma persistência, talvez até alguma key-value, para manter o status e talvez fazer uma cache e evitar o reenvio de informações que não foram alteradas (se isso fosse interessante para o requisito).
+* Poderia criar de fato os projetos com "produtor/consumidor" ao invés de simular, como eu fiz no teste, criando micro-serviços distintos para cada um.
